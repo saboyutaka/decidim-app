@@ -1,0 +1,35 @@
+{
+  "name": "Decidim App dev",
+  "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "runServices": ["app", "nginx", "pg"],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "ruby.useBundler": true,
+        "ruby.format": "rubocop",
+        "solargraph.useBundler": true,
+        "files.associations": {
+          "Gemfile": "ruby"
+        }
+      },
+      "extensions": [
+        "rebornix.Ruby",
+        "castwide.solargraph",
+        "elia.erb-formatter",
+        "redhat.vscode-yaml",
+        "jemmyw.rails-fast-nav",
+        "aki77.rails-db-schema",
+        "hridoy.rails-snippets",
+        "kaiwood.endwise",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "remoteUser": "decidim",
+
+  "initializeCommand": "if ! [ -f .env ];then cp .env.sample .env;fi",
+  // "postStartCommand": "bundle install && bundle exec solargraph bundle"
+}
