@@ -1,18 +1,5 @@
 version: '3'
 services:
-  nginx:
-    image: nginx:1.21
-    volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./docker/nginx/conf.d:/etc/nginx/conf.d
-    environment:
-      TZ: Asia/Tokyo
-    ports:
-      - 3000:80
-    links:
-      - app
-    depends_on:
-      - app
   app:
     build:
       context: .
@@ -29,6 +16,8 @@ services:
       - RAILS_ENV=development
     links:
       - pg
+    ports:
+      - 3000:3000
     command: bundle exec puma
   pg:
     image: postgres

@@ -3,7 +3,7 @@
   "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
   "service": "app",
   "workspaceFolder": "/app",
-  "runServices": ["app", "nginx", "pg"],
+  "runServices": ["app", "pg"],
   "customizations": {
     "vscode": {
       "settings": {
