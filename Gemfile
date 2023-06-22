@@ -32,5 +32,4 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 4.0"
-  gem "solargraph"
 end
